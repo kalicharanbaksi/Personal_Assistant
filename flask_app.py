@@ -27,8 +27,8 @@ import textwrap
 
 
 # Set Slack API credentials
-SLACK_BOT_TOKEN = "xoxb-5191045347955-5190276386373-gqUDSHZaHnCyIv178VlOCade"
-SLACK_SIGNING_SECRET = "17b921377f198ddeba51bc457fff862b"
+SLACK_BOT_TOKEN = 
+SLACK_SIGNING_SECRET = 
 slack_client = WebClient(token=os.environ["SLACK_BOT_TOKEN"])
 response = slack_client.auth_test()
 SLACK_BOT_USER_ID =response["user_id"] 
@@ -57,7 +57,7 @@ def query_retrive(database, query):
     docs = database.similarity_search(query, k=5)
     page_content = " ".join([d.page_content for d in docs])
 
-    chat = ChatOpenAI(openai_api_key="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",model_name="gpt-3.5-turbo",temperature=0.2)
+    chat = ChatOpenAI(openai_api_key="",model_name="gpt-3.5-turbo",temperature=0.2)
 
 
     template = """
